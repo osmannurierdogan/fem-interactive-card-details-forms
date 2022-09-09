@@ -45,10 +45,10 @@
             </div>
           </div>
           <div class="card__back">
-            <div class="card__back__cvc">{{ cardDetails.cvc || '123' }}</div>
+            <div class="card__back__cvc">{{ cardDetails.cvc || '000' }}</div>
           </div>
         </div>
-        <div class="form">
+        <div class="form" v-if="!isSubmitted">
           <form action="#" class="form-group">
             <div class="form-group__item">
               <label for="name">cardholder name</label>
@@ -64,7 +64,7 @@
               <label for="number">Card Number</label>
               <input
                 type="number"
-                placeholder="e.g. 123456475555"
+                placeholder="e.g. 1234 5647 5555 6666"
                 id="number"
                 v-model="cardDetails.number"
               />
@@ -96,8 +96,18 @@
                 />
               </div>
             </div>
-            <button class="confirm-button">Confirm</button>
+            <button @click="getIsSubmitted" class="button button--confirm">
+              Confirm
+            </button>
           </form>
+        </div>
+        <div v-else class="after-submit">
+          <img src="./images/icon-complete.svg" alt="Complete Icon" />
+          <h1 class="after-submit__title">Thank You!</h1>
+          <p class="after-submit__subtitle">We've added your card details</p>
+          <button @click="getIsSubmitted" class="button button--continue">
+            Continue
+          </button>
         </div>
       </div>
     </section>

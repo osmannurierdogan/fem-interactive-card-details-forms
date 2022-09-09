@@ -19,7 +19,13 @@ const app = Vue.createApp({
         },
         cvc: null,
       },
+      isSubmitted: false,
     };
+  },
+  methods: {
+    getIsSubmitted() {
+      return (this.isSubmitted = !this.isSubmitted);
+    },
   },
   computed: {
     splitCardNumber() {

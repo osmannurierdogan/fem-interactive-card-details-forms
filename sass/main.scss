@@ -198,7 +198,7 @@ input[type="number"] {
     }
   }
 }
-.confirm-button {
+.button {
   // width: 100%;
   align-self: stretch;
   padding: 1.5rem 0;
@@ -211,6 +211,31 @@ input[type="number"] {
   font-size: $font-size-body;
   letter-spacing: 1px;
   cursor: pointer;
+  // &--confirm {
+  // }
+  // &--continue {
+  // }
+}
+.after-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.5rem;
+  margin: 10rem;
+  &__title {
+    color: $color-neutral-very-dark-grayish-violet;
+    font-size: 3.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  &__subtitle {
+    font-size: $font-size-body;
+    color: $color-neutral-dark-grayish-violet;
+    margin-bottom: 3rem;
+  }
 }
 footer {
   .attribution {
