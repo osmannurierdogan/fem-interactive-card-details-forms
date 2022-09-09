@@ -1,7 +1,7 @@
 {
-  "name": "ping-coming-soon-page-component",
+  "name": "interactive-card-details-form",
   "version": "1.0.0",
-  "description": "Design preview for the Ping coming soon page coding challenge",
+  "description": "![Design preview for the Interactive card details form coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss dist/main.css -w",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/osmannurierdogan/fem-ping-coming-soon-page.git"
+    "url": "git+https://github.com/osmannurierdogan/fem-interactive-card-details-forms.git"
   },
   "keywords": [],
   "author": "Osman Nuri Erdogan",
@@ -24,9 +24,9 @@
     "last 10 versions"
   ],
   "bugs": {
-    "url": "https://github.com/osmannurierdogan/fem-ping-coming-soon-page/issues"
+    "url": "https://github.com/osmannurierdogan/fem-interactive-card-details-forms/issues"
   },
-  "homepage": "https://github.com/osmannurierdogan/fem-ping-coming-soon-page#readme",
+  "homepage": "https://github.com/osmannurierdogan/fem-interactive-card-details-forms#readme",
   "dependencies": {
     "autoprefixer": "^9.8.8",
     "concat": "^1.0.3",

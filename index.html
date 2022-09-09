@@ -1,51 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive card details form</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Interactive card details form</title>
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+    <link rel="stylesheet" href="./dist/main.css" />
+    <script defer src="https://unpkg.com/vue@3"></script>
+  </head>
+  <body>
+    <section class="section">
+      <div class="section__image">
+        <img src="./images/bg-main-desktop.png" alt="Main desktop image" />
+      </div>
+      <div class="container" id="app">
+        <div class="card">
+          <div class="card__front">
+            <img src="./images/card-logo.svg" alt="Card Logo" />
+            <div class="card__front__number">
+              <!-- {{ cardDetails.number || "0000 0000 0000 0000"}} -->
+              <!-- {{ splitCardNumber || "0000 0000 0000 0000"}} -->
+              <span v-if="cardDetails.number !== null"
+                >{{ splitCardNumber }}</span
+              >
+              <span v-else>0000 0000 0000 0000</span>
+            </div>
+            <div class="card__front__name-date">
+              <div class="card__front__name-date--name">
+                {{ cardDetails.name || "Jane Appleseed" }}
+              </div>
+              <div class="card__front__name-date--date">
+                {{ cardDetails.date.mount || '00' }} / {{ cardDetails.date.year
+                || '00' }}
+              </div>
+            </div>
+          </div>
+          <div class="card__back">
+            <div class="card__back__cvc">{{ cardDetails.cvc || '123' }}</div>
+          </div>
+        </div>
+        <div class="form">
+          <form action="#" class="form-group">
+            <div class="form-group__item">
+              <label for="name">cardholder name</label>
+              <input
+                type="text"
+                placeholder="e.g. Jane Appleseed"
+                id="name"
+                v-model="cardDetails.name"
+              />
+            </div>
 
-  000
+            <div class="form-group__item">
+              <label for="number">Card Number</label>
+              <input
+                type="number"
+                placeholder="e.g. 123456475555"
+                id="number"
+                v-model="cardDetails.number"
+              />
+            </div>
+            <div class="form-group__item form-group__item--last-line">
+              <div class="form-group__item--exp-date--div">
+                <label for="exp-date">Exp. Date (MM/YY)</label>
+                <div class="form-group__item--exp-date--div-inputs">
+                  <input
+                    type="text"
+                    placeholder="MM"
+                    id="exp-date"
+                    v-model="cardDetails.date.mount"
+                  />
+                  <input
+                    type="text"
+                    placeholder="YY"
+                    v-model="cardDetails.date.year"
+                  />
+                </div>
+              </div>
+              <div class="form-group__item form-group__item--cvc">
+                <label for="cvc">cvc</label>
+                <input
+                  type="number"
+                  placeholder="123"
+                  id="cvc"
+                  v-model="cardDetails.cvc"
+                />
+              </div>
+            </div>
+            <button class="confirm-button">Confirm</button>
+          </form>
+        </div>
+      </div>
+    </section>
 
-  Cardholder Name
-  e.g. Jane Appleseed
+    <!-- Completed state start -->
 
-  Card Number
-  e.g. 1234 5678 9123 0000
+    Thank you! We've added your card details Continue
 
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://frontendmentor.io/profile/osmannurierdogan"
+        >Osman Nuri ERDOGAN</a
+      >.
+    </div>
+    <script defer src="./app.js"></script>
+  </body>
 </html>
